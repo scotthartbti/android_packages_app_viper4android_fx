@@ -239,7 +239,7 @@ public class Utils {
 
     // Check if Busybox is installed & offer installation if not found
     public static boolean isBusyBoxInstalled(Context ctx) {
-        boolean isBusyBoxAvailable = RootTools.isBusyboxAvailable();
+        /*boolean isBusyBoxAvailable = RootTools.isBusyboxAvailable();
         if (!isBusyBoxAvailable) {
             final Context ctxInstance = ctx;
             AlertDialog.Builder mBusyBox = new AlertDialog.Builder(ctxInstance);
@@ -269,7 +269,7 @@ public class Utils {
             });
             mBusyBox.show();
             mBusyBox = null;
-        }
+        }*/
 
         return isBusyBoxAvailable;
     }
@@ -739,8 +739,10 @@ public class Utils {
         // Lets acquire root first :)
         if (!RootTools.isAccessGiven()) return 1;
 
+        String mChmod = "system/bin/chmod";
+
         // Check chmod utils
-        String mChmod;
+        /*String mChmod;
         if (RootTools.checkUtil("chmod"))
             mChmod = "chmod";
         else {
@@ -750,7 +752,7 @@ public class Utils {
                 mChmod = "toolbox chmod";
             else
                 return 5;
-        }
+        }*/
 
         // Generate temp config file path, thanks to 'ste71m'
         String mSystemConf = StaticEnvironment.getExternalStoragePath() + "v4a_audio_system.conf";
